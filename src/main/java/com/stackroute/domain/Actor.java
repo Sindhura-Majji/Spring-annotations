@@ -2,6 +2,7 @@ package com.stackroute.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 
+
 public class Actor {
 
 

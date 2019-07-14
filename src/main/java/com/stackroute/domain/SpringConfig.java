@@ -4,16 +4,12 @@ package com.stackroute.domain;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 @PropertySource("classpath:Actor-info.properties")
 public class SpringConfig {
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
-        return new PropertySourcesPlaceholderConfigurer();
-    }
 
     @Bean
     public Actor actorBean()
@@ -22,6 +18,7 @@ public class SpringConfig {
     }
 
     @Bean
+    @Scope("prototype")
     public Movie movieBean()
     {
         Movie movie = new Movie(actorBean());
