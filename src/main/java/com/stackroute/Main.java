@@ -1,9 +1,11 @@
 package com.stackroute;
 
-import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.domain.Movie;
 import com.stackroute.domain.SpringConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+
+import java.util.Map;
 
 
 public class Main {
@@ -12,7 +14,8 @@ public class Main {
 
         //Using ApplicationContext
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BeanLifecycleDemoBean beanLifecycleDemoBean = context.getBean(BeanLifecycleDemoBean.class);
+        Movie movie = context.getBean(Movie.class);
+        movie.movie();
         context.registerShutdownHook();
 
     }

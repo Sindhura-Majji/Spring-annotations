@@ -9,5 +9,4 @@ import org.springframework.context.annotation.*;
 public class SpringConfig {
 
 
-
 }
