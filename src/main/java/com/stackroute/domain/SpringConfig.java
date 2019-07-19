@@ -10,17 +10,20 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @PropertySource("classpath:Actor-info.properties")
 public class SpringConfig {
 
+    //Bean for PropertySourcePlaceholder
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
         return new PropertySourcesPlaceholderConfigurer();
     }
 
+    //Bean for Actor class
     @Bean
     public Actor actorBean()
     {
         return new Actor();
     }
-
+    
+    //Bean for Movie class 
     @Bean
     public Movie movieBean()
     {
