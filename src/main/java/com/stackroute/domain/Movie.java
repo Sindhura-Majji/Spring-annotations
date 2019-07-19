@@ -6,6 +6,7 @@ public class Movie {
     //Actor Class Initialisation
     private Actor actor;
 
+    //Movie constructor
     public Movie(Actor actor) {
         this.actor = actor;
     }
@@ -21,4 +22,3 @@ public class Movie {
 
 
 }
-
