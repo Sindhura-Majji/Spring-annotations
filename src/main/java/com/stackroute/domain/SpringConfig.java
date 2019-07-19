@@ -10,13 +10,14 @@ import org.springframework.context.annotation.Scope;
 @PropertySource("classpath:Actor-info.properties")
 public class SpringConfig {
 
-
+    //Bean for Actor class
     @Bean
     public Actor actorBean()
     {
         return new Actor();
     }
 
+    //Bean for Movie class and setting scope to prototype
     @Bean
     @Scope("prototype")
     public Movie movieBean()
@@ -24,6 +25,4 @@ public class SpringConfig {
         Movie movie = new Movie(actorBean());
         return movie;
     }
-
-
 }
