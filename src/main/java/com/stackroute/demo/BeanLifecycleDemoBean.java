@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
+//Implementing InitializingBean, DisposableBean
 public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
@@ -18,11 +19,13 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
         System.out.println("Initializer");
     }
 
+    //customInit method
     public void customInit()
     {
         System.out.println("customInit Bean");
     }
 
+    //customDestroy method
     public void customDestroy()
     {
         System.out.println("customDestroy Bean");
