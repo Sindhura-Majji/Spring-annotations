@@ -14,8 +14,16 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         Movie movie = context.getBean("movieBean",Movie.class);
         movie.movie();
-
-
+        
+        //Using Beanfactory
+        BeanFactory beanFactory = new ConfigurableBeanFactory(new ClassPathResource(Config.class));
+        Movie movie1 = beanFactory.getBean("movie",Movie.class); movie1.displayActorDetails();
+        
+        //Using BeanDefinitionRegistry 
+        DefaultListableBeanFactory factory = new DefaultListableBeanFactory(); 
+        BeanDefinitionRegistry beanDefinitionRegistry = new GenericApplicationContext(factory); 
+        BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
+        reader.loadBeanDefinitions(Config.class);
 
 
 
